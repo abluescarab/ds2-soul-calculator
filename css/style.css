@@ -20,11 +20,6 @@ body[data-theme=dark] {
   margin: 0;
 }
 
-html,
-body {
-  height: 100%;
-}
-
 * {
   font-family: "Roboto", sans-serif;
   font-size: 13pt;
