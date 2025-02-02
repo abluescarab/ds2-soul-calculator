@@ -1,0 +1,11 @@
+header {
+    margin: $padding 0;
+
+    p {
+        margin-bottom: calc($padding / 2);
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+}

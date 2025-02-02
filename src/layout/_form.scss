@@ -1,0 +1,13 @@
+form {
+    display: grid;
+    grid-template-columns: 1fr min-content 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    column-gap: calc($padding / 4);
+    row-gap: calc($padding / 4);
+    margin-bottom: $padding;
+    align-items: center;
+
+    button {
+        height: 100%;
+    }
+}

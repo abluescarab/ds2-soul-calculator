@@ -1,0 +1,9 @@
+main {
+    margin: 0 auto;
+    width: 600px;
+    padding-bottom: calc($padding * 4);
+
+    #result {
+        display: none;
+    }
+}

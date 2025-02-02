@@ -1,0 +1,13 @@
+* {
+    font-family: "Roboto", sans-serif;
+    font-size: 13pt;
+    text-align: center;
+}
+
+.small {
+    font-size: 10pt;
+
+    * {
+        font-size: 10pt;
+    }
+}

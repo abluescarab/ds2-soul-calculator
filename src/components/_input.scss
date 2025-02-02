@@ -1,0 +1,11 @@
+button,
+input {
+    background-color: transparent;
+    padding: calc($padding / 4) calc($padding / 2);
+    min-width: 100px;
+    min-height: 25px;
+
+    @include themify($themes) {
+        border: 1px solid theme("borderColor");
+    }
+}

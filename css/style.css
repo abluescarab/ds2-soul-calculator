@@ -1,0 +1,173 @@
+body[data-theme=light] {
+  background-color: #fff;
+}
+
+body[data-theme=dark] {
+  background-color: #111;
+}
+
+[data-theme=light] * {
+  background-color: #fff;
+  color: #000;
+}
+[data-theme=dark] * {
+  background-color: #111;
+  color: #fff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+  font-size: 13pt;
+  text-align: center;
+}
+
+.small {
+  font-size: 10pt;
+}
+.small * {
+  font-size: 10pt;
+}
+
+button {
+  cursor: pointer;
+}
+
+button,
+input {
+  background-color: transparent;
+  padding: 5px 10px;
+  min-width: 100px;
+  min-height: 25px;
+}
+[data-theme=light] button,
+[data-theme=light] input {
+  border: 1px solid #ccc;
+}
+[data-theme=dark] button,
+[data-theme=dark] input {
+  border: 1px solid #333;
+}
+
+[data-theme=light] a {
+  color: #336699;
+}
+[data-theme=light] a:visited {
+  color: #336699;
+}
+[data-theme=dark] a {
+  color: #75d1ff;
+}
+[data-theme=dark] a:visited {
+  color: #75d1ff;
+}
+
+.toggle {
+  font-size: 10pt;
+  font-weight: normal;
+  text-decoration: underline;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.toggle:hover {
+  cursor: pointer;
+}
+[data-theme=light] .toggle {
+  color: #336699;
+}
+[data-theme=dark] .toggle {
+  color: #75d1ff;
+}
+
+#container {
+  display: flow-root;
+  margin: 0 auto;
+  padding: 40px;
+  height: 100%;
+}
+
+header {
+  margin: 20px 0;
+}
+header p {
+  margin-bottom: 10px;
+}
+header h1 {
+  font-size: 2em;
+}
+
+main {
+  margin: 0 auto;
+  width: 600px;
+  padding-bottom: 80px;
+}
+main #result {
+  display: none;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr min-content 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+  row-gap: 5px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+form button {
+  height: 100%;
+}
+
+table {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  border-collapse: collapse;
+  display: none;
+}
+[data-theme=light] table {
+  border: 1px solid #ccc;
+}
+[data-theme=dark] table {
+  border: 1px solid #333;
+}
+[data-theme=light] table tr {
+  border-bottom: 1px solid #ccc;
+}
+[data-theme=dark] table tr {
+  border-bottom: 1px solid #333;
+}
+table th,
+table td {
+  padding: 3px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column wrap;
+  padding: 10px 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+footer * {
+  font-size: 10pt;
+}
+footer #cookie-banner {
+  margin-top: 5px;
+  text-align: center;
+}

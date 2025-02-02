@@ -1,0 +1,22 @@
+table {
+    margin-top: $padding;
+    width: 100%;
+    padding: calc($padding / 2);
+    border-collapse: collapse;
+    display: none;
+
+    @include themify($themes) {
+        border: 1px solid theme("borderColor");
+    }
+
+    tr {
+        @include themify($themes) {
+            border-bottom: 1px solid theme("borderColor");
+        }
+    }
+
+    th,
+    td {
+        padding: 3px;
+    }
+}

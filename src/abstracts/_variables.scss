@@ -1,0 +1,20 @@
+// Main variables
+$font-size: 13pt;
+$small-font-size: 10pt;
+$padding: 20px;
+
+// Theme variables
+$themes: (
+    light: (
+        backgroundColor: #fff,
+        color: #000,
+        borderColor: #ccc,
+        linkColor: #336699,
+    ),
+    dark: (
+        backgroundColor: #111,
+        color: #fff,
+        borderColor: #333,
+        linkColor: #75d1ff,
+    ),
+);

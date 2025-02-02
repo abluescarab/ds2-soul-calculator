@@ -1,0 +1,14 @@
+body[data-theme="light"] {
+    background-color: themeValue("light", "backgroundColor");
+}
+
+body[data-theme="dark"] {
+    background-color: themeValue("dark", "backgroundColor");
+}
+
+* {
+    @include themify($themes) {
+        background-color: theme("backgroundColor");
+        color: theme("color");
+    }
+}

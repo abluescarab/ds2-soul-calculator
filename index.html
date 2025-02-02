@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dark Souls Level Calculator</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body data-theme="light">
+        <header>
+            <h1>Dark Souls 2 Soul Level Calculator</h1>
+        </header>
+
+        <main>
+            <form id="calculator">
+                <label for="start-level">Start level:</label>
+                <span></span>
+                <label for="goal-level">Goal level:</label>
+                <input
+                    type="number"
+                    min="1"
+                    max="850"
+                    id="start-level"
+                    placeholder="1" />
+                <button type="button" id="move-left">&leftarrow;</button>
+                <input
+                    type="number"
+                    min="1"
+                    max="850"
+                    id="goal-level"
+                    placeholder="850" />
+                <span></span>
+                <button type="reset">Reset</button>
+            </form>
+            <p id="result">
+                To get from level <strong id="start-display">1</strong> to level
+                <strong id="goal-display">850</strong>, you will need
+                <strong id="result-display">1</strong> souls.
+            </p>
+            <table id="levels">
+                <thead>
+                    <tr>
+                        <th>Level</th>
+                        <th>Souls</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </main>
+
+        <footer>
+            <div id="footer-text" class="row">
+                <p>
+                    <a
+                        href="https://github.com/abluescarab/REPLACE"
+                        target="_blank"
+                        >source code</a
+                    >
+                    &bull;
+                    <span id="change-theme" class="toggle">change theme</span>
+                    &bull; <a href="#">back to top</a>
+                </p>
+            </div>
+
+            <div id="cookie-banner">
+                <p>
+                    This website can use cookies to save your theme and levels.
+                    <button type="button" id="accept-cookies">Accept</button>
+                    <button type="button" id="decline-cookies">Decline</button>
+                </p>
+            </div>
+        </footer>
+
+        <!-- <footer>
+            <p>
+                Based on the
+                <a
+                    href="https://trifectaiii.github.io/DS1-Soul-Level-Calculator/"
+                    >DS1 Soul Level Calculator</a
+                >
+                by Dakota Madden-Fong using information from
+                <a href="http://darksouls2.wikidot.com/level">Wikidot</a>.
+            </p>
+            <p>
+                This website can use cookies to store your theme selection.
+            </p>
+            <div>
+                <button id="accept-cookies">Accept</button>
+                <button id="decline-cookies">Decline</button>
+            </div>
+        </footer> -->
+    </body>
+    <script src="js/constants.js"></script>
+    <script src="js/cookies.js"></script>
+    <script src="js/script.js"></script>
+</html>

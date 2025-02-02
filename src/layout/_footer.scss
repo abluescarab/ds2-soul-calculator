@@ -1,0 +1,20 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column wrap;
+    padding: calc($padding / 2) 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+    * {
+        font-size: $small-font-size;
+    }
+
+    #cookie-banner {
+        margin-top: calc($padding / 4);
+        text-align: center;
+    }
+}

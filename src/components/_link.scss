@@ -1,0 +1,9 @@
+a {
+    @include themify($themes) {
+        color: theme("linkColor");
+
+        &:visited {
+            color: theme("linkColor");
+        }
+    }
+}
