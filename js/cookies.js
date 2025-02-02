@@ -1,12 +1,3 @@
-const cookiePrefix = "ds2Calculator_";
-
-const cookies = Object.freeze({
-    allowed: "cookiesAllowed",
-    theme: "theme",
-    startLevel: "startLevel",
-    goalLevel: "goalLevel",
-});
-
 // modified from https://stackoverflow.com/a/25490531
 function getCookie(name) {
     let cookieName = cookiePrefix + name;
