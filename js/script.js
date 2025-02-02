@@ -1,35 +1,3 @@
-const form = document.getElementById("calculator");
-const startInput = document.getElementById("start-level");
-const goalInput = document.getElementById("goal-level");
-const moveLeftButton = document.getElementById("move-left");
-const result = document.getElementById("result");
-const table = document.getElementById("levels");
-const themeButton = document.getElementById("change-theme");
-const acceptCookiesButton = document.getElementById("accept-cookies");
-const declineCookiesButton = document.getElementById("decline-cookies");
-
-document.addEventListener("DOMContentLoaded", function (e) {
-    form.addEventListener("reset", reset);
-    moveLeftButton.addEventListener("click", moveLeft);
-    startInput.addEventListener("input", changeInput);
-    goalInput.addEventListener("input", changeInput);
-    themeButton.addEventListener("click", () => changeTheme());
-
-    acceptCookiesButton.addEventListener("click", function (e) {
-        setCookie(cookies.allowed, "true", 365);
-        document.getElementById("cookie-banner").style.display = "none";
-        saveData();
-    });
-
-    declineCookiesButton.addEventListener("click", function (e) {
-        setCookie(cookies.allowed, "false", 365);
-        document.getElementById("cookie-banner").style.display = "none";
-    });
-
-    form.reset();
-    loadData();
-});
-
 function loadData() {
     const banner = document.getElementById("cookie-banner");
     const cookiesAllowed = getCookie(cookies.allowed);
@@ -75,13 +43,9 @@ function saveData() {
 
 function toggleResult(show = true) {
     table.style.display = show ? "table" : "none";
-    result.style.display = show ? "inline-block" : "none";
-}
-
-function reset(ev) {
-    toggleResult(false);
-    saveData();
-    ev.target.reset();
+    document.getElementById("result").style.display = show
+        ? "inline-block"
+        : "none";
 }
 
 function changeTheme(theme = "") {
@@ -96,18 +60,6 @@ function changeTheme(theme = "") {
     if (getCookie(cookies.allowed) === "true") {
         setCookie(cookies.theme, body.dataset.theme, 365);
     }
-}
-
-function moveLeft() {
-    if (goalInput.value == "") {
-        return;
-    }
-
-    startInput.value = goalInput.value;
-    goalInput.value = "";
-    goalInput.focus();
-    saveData();
-    toggleResult(false);
 }
 
 function changeInput(ev) {
@@ -142,20 +94,16 @@ function calculate() {
 
     toggleResult(true);
 
-    const startDisplay = document.getElementById("start-display");
-    const goalDisplay = document.getElementById("goal-display");
-    const resultDisplay = document.getElementById("result-display");
-
-    startDisplay.innerText = startInput.value;
-    goalDisplay.innerText = goalInput.value;
-
     const souls = levels
         .slice(startVal, goalVal)
         .reduce((a, b) => a + b)
         .toLocaleString();
     const tableBody = table.getElementsByTagName("tbody")[0];
 
-    resultDisplay.innerText = souls;
+    document.getElementById("start-display").innerText = startInput.value;
+    document.getElementById("goal-display").innerText = goalInput.value;
+    document.getElementById("result-display").innerText = souls;
+
     tableBody.innerHTML = "";
 
     for (let i = startVal; i < goalVal; i++) {

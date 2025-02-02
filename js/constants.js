@@ -1,3 +1,8 @@
+const form = document.getElementById("calculator");
+const startInput = document.getElementById("start-level");
+const goalInput = document.getElementById("goal-level");
+const table = document.getElementById("levels");
+
 // data from http://darksouls2.wikidot.com/level
 const levels = Object.freeze([
     0, 500, 528, 557, 587, 619, 653, 689, 727, 767, 810, 854, 901, 948, 997,
