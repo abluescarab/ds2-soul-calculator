@@ -8,17 +8,13 @@ footer {
     flex-flow: column wrap;
     padding: calc($padding / 2) 0;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
 
     * {
         font-size: $small-font-size;
     }
 
-    #footer-attribution {
-        margin-top: calc($padding / 2);
-    }
-
-    #cookie-banner {
+    p {
         margin-top: calc($padding / 4);
-        text-align: center;
     }
 }

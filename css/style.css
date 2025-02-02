@@ -156,14 +156,11 @@ footer {
   flex-flow: column wrap;
   padding: 10px 0;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
 }
 footer * {
   font-size: 10pt;
 }
-footer #footer-attribution {
-  margin-top: 10px;
-}
-footer #cookie-banner {
+footer p {
   margin-top: 5px;
-  text-align: center;
 }
