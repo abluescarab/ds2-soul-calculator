@@ -160,6 +160,9 @@ footer {
 footer * {
   font-size: 10pt;
 }
+footer #footer-attribution {
+  margin-top: 10px;
+}
 footer #cookie-banner {
   margin-top: 5px;
   text-align: center;

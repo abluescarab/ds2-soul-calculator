@@ -13,6 +13,10 @@ footer {
         font-size: $small-font-size;
     }
 
+    #footer-attribution {
+        margin-top: calc($padding / 2);
+    }
+
     #cookie-banner {
         margin-top: calc($padding / 4);
         text-align: center;
