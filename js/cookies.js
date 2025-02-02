@@ -1,32 +1,40 @@
-// modified from https://stackoverflow.com/a/25490531
-function getCookie(name) {
-    let cookieName = cookiePrefix + name;
-    let result = document.cookie.match(
-        "(^|;)\\s*" + cookieName + "\\s*=\\s*([^;]*)"
-    );
+class Cookies {
+    prefix = "";
+    expiryDays = 365;
+    path = "/";
+    sameSite = "Lax";
 
-    if (result === null) {
-        return null;
+    constructor(prefix) {
+        this.prefix = prefix;
     }
 
-    return result.pop();
-}
+    // modified from https://stackoverflow.com/a/25490531
+    get(name) {
+        let result = document.cookie.match(
+            `(^|;)\\s*${this.prefix}${name}\\s*=\\s*([^;]*)`
+        );
 
-// copied from https://stackoverflow.com/a/24103596
-function setCookie(name, value, days) {
-    let expires = "";
+        if (result === null) {
+            return null;
+        }
 
-    if (days) {
-        let date = new Date();
-        date.setDate(date.getDate() + days);
-        expires = "; expires=" + date.toUTCString();
+        return result.pop();
     }
 
-    document.cookie =
-        cookiePrefix +
-        name +
-        "=" +
-        (value || "") +
-        expires +
-        "; path=/; SameSite=Lax";
+    // modified from https://stackoverflow.com/a/24103596
+    set(name, value) {
+        let expires = "";
+
+        if (this.expiryDays > -1) {
+            let date = new Date();
+            date.setDate(date.getDate() + this.expiryDays);
+            expires = date.toUTCString();
+        }
+
+        document.cookie =
+            `${this.prefix}${name}=${value || ""}; ` +
+            `expires=${expires}; ` +
+            `path=${this.path}; ` +
+            `SameSite=${this.sameSite}`;
+    }
 }

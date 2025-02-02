@@ -1,12 +1,11 @@
-const cookiePrefix = "ds2Calculator_";
-
-const cookies = Object.freeze({
+const cookieNames = Object.freeze({
     allowed: "cookiesAllowed",
     theme: "theme",
     startLevel: "startLevel",
     goalLevel: "goalLevel",
 });
 
+const cookies = new Cookies("ds2Calculator_");
 const form = document.getElementById("calculator");
 const startInput = document.getElementById("start-level");
 const goalInput = document.getElementById("goal-level");

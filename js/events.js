@@ -28,7 +28,7 @@ document
 document
     .getElementById("accept-cookies")
     .addEventListener("click", function (e) {
-        setCookie(cookies.allowed, "true", 365);
+        cookies.set(cookieNames.allowed, "true");
         document.getElementById("cookie-banner").style.display = "none";
         saveData();
     });
@@ -36,7 +36,7 @@ document
 document
     .getElementById("decline-cookies")
     .addEventListener("click", function (e) {
-        setCookie(cookies.allowed, "false", 365);
+        cookies.set(cookieNames.allowed, "false");
         document.getElementById("cookie-banner").style.display = "none";
     });
 

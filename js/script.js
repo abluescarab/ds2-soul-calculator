@@ -1,6 +1,6 @@
 function loadData() {
     const banner = document.getElementById("cookie-banner");
-    const cookiesAllowed = getCookie(cookies.allowed);
+    const cookiesAllowed = cookies.get(cookieNames.allowed);
 
     if (cookiesAllowed === null) {
         banner.style.display = "block";
@@ -12,12 +12,12 @@ function loadData() {
         return;
     }
 
-    if (getCookie(cookies.theme) === "dark") {
+    if (cookies.get(cookieNames.theme) === "dark") {
         changeTheme("dark");
     }
 
-    const startLevel = getCookie(cookies.startLevel);
-    const goalLevel = getCookie(cookies.goalLevel);
+    const startLevel = cookies.get(cookieNames.startLevel);
+    const goalLevel = cookies.get(cookieNames.goalLevel);
 
     if (startLevel !== null) {
         startInput.value = startLevel;
@@ -33,12 +33,12 @@ function loadData() {
 }
 
 function saveData() {
-    if (getCookie(cookies.allowed) !== "true") {
+    if (cookies.get(cookieNames.allowed) !== "true") {
         return;
     }
 
-    setCookie(cookies.startLevel, startInput.value, 365);
-    setCookie(cookies.goalLevel, goalInput.value, 365);
+    cookies.set(cookieNames.startLevel, startInput.value);
+    cookies.set(cookieNames.goalLevel, goalInput.value);
 }
 
 function toggleResult(show = true) {
@@ -57,8 +57,8 @@ function changeTheme(theme = "") {
         body.dataset.theme = body.dataset.theme == "light" ? "dark" : "light";
     }
 
-    if (getCookie(cookies.allowed) === "true") {
-        setCookie(cookies.theme, body.dataset.theme, 365);
+    if (cookies.get(cookieNames.allowed) === "true") {
+        cookies.set(cookieNames.theme, body.dataset.theme);
     }
 }
 
