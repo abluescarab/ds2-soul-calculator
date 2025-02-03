@@ -1,7 +1,7 @@
 form {
     display: grid;
-    grid-template-columns: 1fr min-content 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr min-content min-content 1fr;
+    grid-template-rows: repeat(3, 1fr);
     column-gap: calc($padding / 4);
     row-gap: calc($padding / 4);
     margin-bottom: $padding;
@@ -9,5 +9,11 @@ form {
 
     button {
         height: 100%;
+    }
+
+    .center {
+        grid-column: span 4;
+        width: min-content;
+        margin: 0 auto;
     }
 }

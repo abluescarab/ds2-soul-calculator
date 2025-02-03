@@ -21,6 +21,17 @@ document.getElementById("move-left").addEventListener("click", () => {
     toggleResult(false);
 });
 
+document.getElementById("plus-one").addEventListener("click", (e) => {
+    let val = parseInt(startInput.value);
+
+    if (!val) {
+        return;
+    }
+
+    goalInput.value = val + 1;
+    calculate();
+});
+
 document
     .getElementById("change-theme")
     .addEventListener("click", () => changeTheme());

@@ -105,8 +105,8 @@ main #result {
 
 form {
   display: grid;
-  grid-template-columns: 1fr min-content 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr min-content min-content 1fr;
+  grid-template-rows: repeat(3, 1fr);
   -moz-column-gap: 5px;
        column-gap: 5px;
   row-gap: 5px;
@@ -115,6 +115,12 @@ form {
 }
 form button {
   height: 100%;
+}
+form .center {
+  grid-column: span 4;
+  width: -moz-min-content;
+  width: min-content;
+  margin: 0 auto;
 }
 
 table {
