@@ -1,7 +1,7 @@
 main {
     margin: 0 auto;
-    width: 600px;
-    padding-bottom: calc($padding * 4);
+    max-width: 600px;
+    padding-bottom: calc($padding * 8);
 
     #result {
         display: none;

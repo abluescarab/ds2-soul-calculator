@@ -96,8 +96,8 @@ header h1 {
 
 main {
   margin: 0 auto;
-  width: 600px;
-  padding-bottom: 80px;
+  max-width: 600px;
+  padding-bottom: 160px;
 }
 main #result {
   display: none;
