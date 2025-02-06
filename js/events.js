@@ -1,12 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
-    form.reset();
+    toggleResult(false);
     loadData();
 });
 
 form.addEventListener("reset", (e) => {
-    toggleResult(false);
-    saveData();
-    e.target.reset();
+    // setTimeout waits for reset to finish
+    setTimeout(() => {
+        toggleResult(false);
+        saveData();
+    }, 1);
 });
 
 document.getElementById("move-left").addEventListener("click", () => {
